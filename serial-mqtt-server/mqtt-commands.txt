@@ -1,0 +1,7 @@
+mosquitto -v > D:\Desenvolvimento\arduino
+
+mosquitto_pub -d -h 52.67.110.105 -p 1883 -t "danyllo/led/meuled" -m "0"
+
+------------------ local --
+
+mosquitto_sub -d -h localhost -p 1883 -t "danyllo180494/temperatura/sensor temperatura"
