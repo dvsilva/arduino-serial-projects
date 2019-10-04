@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import br.com.dvs.control.CtrlProgram;
-import br.com.dvs.domain.OperationsEnum;
+import br.com.dvs.domain.Operations;
 
 /**
  * @author Danyllo
@@ -113,12 +113,12 @@ public class MainView extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent source) {
 		
 		if(source.getSource() == this.btTurnOn){
-			this.ctrlProgram.execute(OperationsEnum.TURN_ON);
+			this.ctrlProgram.execute(Operations.TURN_ON);
 			JOptionPane.showMessageDialog(this, "Turned on");
 		}
 		
 		if(source.getSource() == this.btTurnOff){
-			this.ctrlProgram.execute(OperationsEnum.TURN_OFF);
+			this.ctrlProgram.execute(Operations.TURN_OFF);
 			JOptionPane.showMessageDialog(this, "Turned off");
 		}
 		

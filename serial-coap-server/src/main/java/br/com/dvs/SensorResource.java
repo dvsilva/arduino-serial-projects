@@ -32,13 +32,13 @@ public class SensorResource extends CoapResource {
 		@Override
 		public void run() {
 			sensorData = service.getLastData();
-			//sensorData = "32Â°";
+			//sensorData = "32°"; // mock
 			changed(); // notify all observers
 		}
 	}
 
 	@Override
 	public void handleGET(CoapExchange exchange) {
-		exchange.respond(ResponseCode.CONTENT, this.sensorData, MediaTypeRegistry.TEXT_PLAIN);
+		exchange.respond(ResponseCode.CONTENT, "{ data: " + sensorData + " }", MediaTypeRegistry.TEXT_PLAIN);
 	}
 }

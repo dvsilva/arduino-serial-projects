@@ -129,7 +129,7 @@ public class Arduino implements SerialPortEventListener {
 	 *            - Operation that will be executed
 	 * @throws SendDataException 
 	 */
-	public void execute(OperationsEnum operation) throws SendDataException {
+	public void execute(Operations operation) throws SendDataException {
 		sendData(operation.getValue());
 	}
 	

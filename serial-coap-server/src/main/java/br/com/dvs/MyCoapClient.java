@@ -23,9 +23,15 @@ public class MyCoapClient {
 		client = new CoapClient("coap://127.0.0.1:5683/actuator");
 		request = new Request(Code.PUT);
 		request.setPayload("turn_on");
-
+		
 		coapResp = client.advanced(request);
 		System.out.println(coapResp.getResponseText());
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		client = new CoapClient("coap://127.0.0.1:5683/actuator");
 		request = new Request(Code.PUT);

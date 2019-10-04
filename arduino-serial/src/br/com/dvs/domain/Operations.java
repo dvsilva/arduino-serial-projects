@@ -3,13 +3,14 @@ package br.com.dvs.domain;
 /**
  * @author Danyllo
  */
-public enum OperationsEnum {
-
-	TURN_ON(1), TURN_OFF(0);
+public enum Operations {
+	
+	TURN_OFF(1),
+	TURN_ON(2);
 
 	private int value;
 
-	private OperationsEnum(int value) {
+	private Operations(int value) {
 		this.value = value;
 	}
 

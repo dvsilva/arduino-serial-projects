@@ -1,6 +1,6 @@
 package br.com.dvs.control;
 
-import br.com.dvs.domain.OperationsEnum;
+import br.com.dvs.domain.Operations;
 import br.com.dvs.service.ArduinoService;
 import br.com.dvs.view.MainView;
 
@@ -37,7 +37,7 @@ public class CtrlProgram {
 	 * @param operation
 	 *            - Operation that will be executed
 	 */
-	public void execute(OperationsEnum operation) {
+	public void execute(Operations operation) {
 		this.service.execute(operation);
 	}
 

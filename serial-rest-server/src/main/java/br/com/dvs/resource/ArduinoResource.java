@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.dvs.domain.OperationsEnum;
+import br.com.dvs.domain.Operations;
 import br.com.dvs.service.ArduinoService;
 
 @RestController
@@ -48,11 +48,11 @@ public class ArduinoResource {
 	}
 
 	private String execute(String operation) {
-		OperationsEnum op = OperationsEnum.valueOf(operation.toUpperCase());
+		Operations op = Operations.valueOf(operation.toUpperCase());
 		logger.info("Executing " + op.toString() );
 
 		ArduinoService service = ArduinoService.getSingleton();
-		//service.execute(op);
+		service.execute(op);
 
 		String jsonFormatted = "{ result: Status changed to " + op.toString() + "}";
 		logger.info(jsonFormatted);

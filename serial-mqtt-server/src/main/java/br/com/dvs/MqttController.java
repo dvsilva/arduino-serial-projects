@@ -7,10 +7,11 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import br.com.dvs.mqtt.Subscriber;
+
 public class MqttController implements MqttCallback {
 
-	private static String SERVER = "tcp://iot.eclipse.org:1883";
-	//private static String SERVER = "tcp://localhost:1883";
+	private static final String SERVER = "tcp://localhost:1883";
 	
 	private Subscriber subscriber;
 	

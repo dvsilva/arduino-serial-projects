@@ -3,7 +3,7 @@ package br.com.dvs.service;
 
 
 import br.com.dvs.domain.Arduino;
-import br.com.dvs.domain.OperationsEnum;
+import br.com.dvs.domain.Operations;
 import br.com.dvs.exception.PortInitializationException;
 import br.com.dvs.exception.SendDataException;
 
@@ -58,7 +58,7 @@ public class ArduinoService {
 	 * @param operation
 	 *            - Operation that will be executed
 	 */
-	public void execute(OperationsEnum operation) {
+	public void execute(Operations operation) {
 		try {
 			this.arduino.execute(operation);
 		} catch (SendDataException e) {
