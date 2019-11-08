@@ -1,5 +1,6 @@
-package br.com.dvs;
+package br.com.dvs.test;
 
+import br.com.dvs.MqttController;
 import br.com.dvs.mqtt.Publisher;
 
 public class ActuatorPublisher implements Publisher {
@@ -16,7 +17,7 @@ public class ActuatorPublisher implements Publisher {
 	}
 
 	public void doPublish() {
-		controller.publish("/danyllo/actuator", "turn_off");
+		controller.publish("/esri/actuator", "turn_off");
 	}
 
 }

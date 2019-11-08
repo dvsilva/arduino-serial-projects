@@ -1,5 +1,6 @@
-package br.com.dvs;
+package br.com.dvs.resources;
 
+import br.com.dvs.MqttController;
 import br.com.dvs.domain.Operations;
 import br.com.dvs.mqtt.Subscriber;
 import br.com.dvs.service.ArduinoService;
@@ -14,20 +15,15 @@ public class ActuatorSubscriber implements Subscriber {
 		this.controller = new MqttController();
 	}
 
-	public static void main(String[] args) {
-		ActuatorSubscriber subscriber = new ActuatorSubscriber();
-		subscriber.start();
-	}
-
-	private void start() {
+	public void start() {
 		//System.out.println("Subscribing");
-		controller.subscribe("/danyllo/actuator", (Subscriber) this);
+		controller.subscribe("/esri/actuator", (Subscriber) this);
 	}
 
 	public void executeCallback(String topic, String message) {
 		System.out.println("Message arrived on " + topic + ": " + message);
 		
-		if (topic.equalsIgnoreCase("/danyllo/actuator")) {
+		if (topic.equalsIgnoreCase("/esri/actuator")) {
 			Operations op = Operations.valueOf(message.toUpperCase());
 			System.out.println("Operations : " + op);
 			service.execute(op);

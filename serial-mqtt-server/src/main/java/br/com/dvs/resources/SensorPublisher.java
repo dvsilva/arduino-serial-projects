@@ -1,8 +1,9 @@
-package br.com.dvs;
+package br.com.dvs.resources;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import br.com.dvs.MqttController;
 import br.com.dvs.mqtt.Publisher;
 import br.com.dvs.service.ArduinoService;
 
@@ -38,7 +39,7 @@ public class SensorPublisher implements Publisher {
 		// int nextInt = new Random().nextInt(100);
 		// String sensorData = String.valueOf(nextInt) + "°";
 		// System.out.println("Publishing " + sensorData);
-		controller.publish("/danyllo/sensor", sensorData);
+		controller.publish("/esri/sensor", sensorData);
 	}
 
 }
